@@ -9,8 +9,8 @@ from streamlit_option_menu import option_menu
 # from streamlit_aggrid import AgGrid, GridOptionsBuilder  # Removed for compatibility
 # from streamlit_plotly_events import plotly_events  # Removed for compatibility
 
-from app.optimizer import EnterpriseOptimizer
-from app.gcp_data import get_gcp_instances, get_regions, get_historical_costs, get_instance_utilization
+from optimizer import EnterpriseOptimizer
+from gcp_data import get_gcp_instances, get_regions, get_historical_costs, get_instance_utilization
 
 # Page configuration
 st.set_page_config(

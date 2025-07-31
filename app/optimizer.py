@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from typing import Dict, List, Optional, Tuple
-from .gcp_data import get_gcp_instances, get_instance_performance, calculate_cost_optimization
+from gcp_data import get_gcp_instances, get_instance_performance, calculate_cost_optimization
 
 class EnterpriseOptimizer:
     """Advanced optimizer for enterprise AI inference workloads."""
