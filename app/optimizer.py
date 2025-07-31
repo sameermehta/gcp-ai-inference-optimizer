@@ -146,7 +146,20 @@ class EnterpriseOptimizer:
         """Get scalability score based on instance specs."""
         # Higher CPU/memory ratios indicate better scalability
         cpu_memory_ratio = instance['cpu'] / instance['memory_gb']
-        network_score = float(instance['network_performance'].split()[0]) / 16  # Normalize to 16 Gbps
+        
+        # Handle network performance parsing safely
+        try:
+            network_perf = instance['network_performance']
+            if 'Up to' in network_perf:
+                # Extract number from "Up to X Gbps"
+                network_value = float(network_perf.split()[2])
+            else:
+                # Extract number from "X Gbps"
+                network_value = float(network_perf.split()[0])
+            network_score = network_value / 16  # Normalize to 16 Gbps
+        except (ValueError, IndexError):
+            # Default network score if parsing fails
+            network_score = 0.5
         
         return (cpu_memory_ratio * 0.6 + network_score * 0.4)
     
