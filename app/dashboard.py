@@ -6,8 +6,8 @@ import numpy as np
 from datetime import datetime, timedelta
 import altair as alt
 from streamlit_option_menu import option_menu
-from streamlit_aggrid import AgGrid, GridOptionsBuilder
-from streamlit_plotly_events import plotly_events
+# from streamlit_aggrid import AgGrid, GridOptionsBuilder  # Removed for compatibility
+# from streamlit_plotly_events import plotly_events  # Removed for compatibility
 
 from app.optimizer import EnterpriseOptimizer
 from app.gcp_data import get_gcp_instances, get_regions, get_historical_costs, get_instance_utilization
